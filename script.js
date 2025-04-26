@@ -1,10 +1,10 @@
 // digital clock
 //.padStart(2, 0) means for the first 2 characters pad them with a zero
 
-function updateClock() {
+const updateClock = () => {
   const now = new Date();
   let hours = now.getHours();
-  const meridian = hours >= 12 ? 'PM' : 'AM';
+  const meridian = hours >= 12 ? "PM" : "AM";
 
   hours = hours % 12 || 12;
   hours = hours.toString().padStart(2, 0);
@@ -13,8 +13,8 @@ function updateClock() {
 
   const timeString = `${hours}:${minutes}:${seconds} ${meridian}`;
 
-  document.getElementById('clock').textContent = timeString;
-}
+  document.getElementById("clock").textContent = timeString;
+};
 
 updateClock();
 setInterval(updateClock, 1000); // calls the function repeatedlly
