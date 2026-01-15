@@ -1,3 +1,22 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: rgba(255, 255, 255, 0.7);
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --accent-color: #00d2ff;
+  --font-main: 'Outfit', sans-serif;
+}
+
+[data-theme="light"] {
+  --primary-color: #1a1a1a;
+  --secondary-color: rgba(0, 0, 0, 0.6);
+  --bg-overlay: rgba(255, 255, 255, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --accent-color: #0076ad;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,26 +24,122 @@
 }
 
 body {
-  background-image: url(background.png);
+  font-family: var(--font-main);
+  background-image: url('background.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#clock-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+#clock-container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 600px;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#date-display {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 #clock {
-  font-family: monospace;
-  font-size: 6.5rem;
-  font-weight: bold;
+  font-size: clamp(3rem, 15vw, 6rem);
+  font-weight: 700;
+  color: var(--primary-color);
   text-align: center;
-  color: #fff;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.meridian {
+  font-size: 0.4em;
+  color: var(--accent-color);
+  font-weight: 400;
+}
+
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
   backdrop-filter: blur(5px);
-  background-color: hsl(0, 0%, 100%, 0.1);
-  width: 100%;
+}
+
+button:hover {
+  background: var(--card-border);
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.sun-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 2rem 1rem;
+  }
+  
+  #date-display {
+    font-size: 0.9rem;
+  }
 }
