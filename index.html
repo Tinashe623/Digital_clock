@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Clock | Modern</title>
+    <title>Modern Digital Clock & Pro Utility Suite | Glassmorphism Design</title>
+    <meta name="description" content="A professional digital clock and stopwatch suite with a premium glassmorphism design. Features include 12/24h toggle, dynamic greetings, inspirational quotes, and precision lap timing." />
+    <meta name="keywords" content="digital clock, stopwatch, glassmorphism, productivity tool, web app, modern UI, timer, lap timer" />
+    <meta name="author" content="Tinashe" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tinashe.github.io/digital-clock/" />
+    <meta property="og:title" content="Modern Digital Clock & Pro Utility Suite" />
+    <meta property="og:description" content="Stunning glassmorphism clock and precision stopwatch utility." />
+    <meta property="og:image" content="background.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tinashe.github.io/digital-clock/" />
+    <meta property="twitter:title" content="Modern Digital Clock & Pro Utility Suite" />
+    <meta property="twitter:description" content="Stunning glassmorphism clock and precision stopwatch utility." />
+    <meta property="twitter:image" content="background.png" />
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text x=%224%22 y=%2212%22 font-size=%2212%22>🕒</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +30,16 @@
   </head>
   <body>
     <main id="clock-container">
-      <div class="glass-card">
-        <div id="date-display">Thursday, January 15, 2026</div>
-        <div id="clock">00:00:00 <span class="meridian">AM</span></div>
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="clock-tab">Clock</button>
+        <button class="tab-btn" data-tab="stopwatch-tab">Stopwatch</button>
+      </nav>
+
+      <div id="clock-tab" class="glass-card tab-content active">
+        <div id="greeting-display"></div>
+        <div id="date-display"></div>
+        <div id="clock"></div>
+        <div id="quote-display"></div>
         
         <div class="controls">
           <button id="format-toggle" title="Toggle 12/24 Hour Format">12H</button>
@@ -22,6 +47,17 @@
             <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           </button>
         </div>
+      </div>
+
+      <div id="stopwatch-tab" class="glass-card tab-content">
+        <div class="stopwatch-display">00:00:00.<span class="ms">00</span></div>
+        <div class="stopwatch-controls">
+          <button id="sw-start" class="btn-primary">Start</button>
+          <button id="sw-stop">Stop</button>
+          <button id="sw-lap">Lap</button>
+          <button id="sw-reset">Reset</button>
+        </div>
+        <ul id="laps-list"></ul>
       </div>
     </main>
     <script src="script.js"></script>
