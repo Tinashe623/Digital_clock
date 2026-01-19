@@ -2,7 +2,7 @@
 
 A stunning, professional web application that combines a minimalist **Glassmorphism** clock with powerful time-tracking utilities. Designed with modern aesthetics, fluid responsiveness, and user persistence.
 
-🔗 **Live Demo:** [https://premium-digital-suite.netlify.app/](https://premium-digital-suite.netlify.app/)
+🔗- **Live Demo:** [tinashe-digital-clock.vercel.app](https://tinashe-digital-clock.vercel.app/)
 
 ---
 
@@ -27,13 +27,13 @@ A stunning, professional web application that combines a minimalist **Glassmorph
 
 ## 🚀 Getting Started
 
-Simply open `index.html` in any modern web browser or visit the [Live Demo](https://premium-digital-suite.netlify.app/).
+Simply open `index.html` in any modern web browser or visit the [Live Demo](https://tinashe-digital-clock.vercel.app/).
 
 ## 🛠️ Built With
 - **HTML5**: Semantic and clean structure.
 - **Vanilla CSS3**: Advanced glassmorphism, animations, and responsive system.
 - **Modern JavaScript**: Robust logic, DOM manipulation, and persistence handling.
-- **Netlify**: Professional hosting with security headers.
+- **Vercel**: This project is configured for seamless deployment on **Vercel**.
 
 ---
 
