@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tinashe.github.io/digital-clock/sitemap.xml
+Sitemap: https://digital-clock-nine-taupe.vercel.app/sitemap.xml

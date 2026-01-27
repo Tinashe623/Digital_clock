@@ -2,6 +2,9 @@
 
 A stunning, professional web application that combines a minimalist **Glassmorphism** clock with powerful time-tracking utilities. Designed with modern aesthetics, fluid responsiveness, and user persistence.
 
+## 🌐 Live Demo
+- https://digital-clock-nine-taupe.vercel.app/
+
 ---
 
 ## ✨ Features
@@ -31,7 +34,7 @@ A stunning, professional web application that combines a minimalist **Glassmorph
 - **HTML5**: Semantic and clean structure.
 - **Vanilla CSS3**: Advanced glassmorphism, animations, and responsive system.
 - **Modern JavaScript**: Robust logic, DOM manipulation, and persistence handling.
-- **Vercel**: This project is configured for seamless deployment on **Vercel**.
+- **Vercel**: This project is configured for seamless deployment on **Vercel** (and is live).
 
 ---
 
