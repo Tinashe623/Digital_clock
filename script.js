@@ -45,6 +45,11 @@ document.documentElement.setAttribute("data-theme", isDarkMode ? "dark" : "light
 formatBtn.textContent = is24Hour ? "24H" : "12H";
 quoteElement.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
 
+// Initialize - Stopwatch button states
+swStopBtn.disabled = true;
+swLapBtn.disabled = true;
+swResetBtn.disabled = true;
+
 const updateClock = () => {
     const now = new Date();
     
@@ -122,6 +127,8 @@ swStartBtn.addEventListener("click", () => {
         swRunning = true;
         swStartBtn.disabled = true;
         swStopBtn.disabled = false;
+        swLapBtn.disabled = false;
+        swResetBtn.disabled = false;
         swStartBtn.classList.add("disabled");
     }
 });
@@ -132,6 +139,7 @@ swStopBtn.addEventListener("click", () => {
         swRunning = false;
         swStartBtn.disabled = false;
         swStopBtn.disabled = true;
+        swLapBtn.disabled = true;
         swStartBtn.classList.remove("disabled");
     }
 });
@@ -154,6 +162,8 @@ swResetBtn.addEventListener("click", () => {
     swDisplay.innerHTML = `00:00:00.<span class="ms">00</span>`;
     swStartBtn.disabled = false;
     swStopBtn.disabled = true;
+    swLapBtn.disabled = true;
+    swResetBtn.disabled = true;
     swStartBtn.classList.remove("disabled");
     swLapsList.innerHTML = "";
 });
